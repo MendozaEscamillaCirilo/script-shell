@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd $HOME/www/thttpd01
+echo "Puerto 1234"
+thttpd -D -p 1234 -d $HOME/www/thttpd01 -nor -T UTF-8 -l -

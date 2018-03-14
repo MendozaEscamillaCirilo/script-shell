@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd /home/cirilo/.local/opt
+
+cd /home/cirilo/.local/opt/eclipse-java
+
+./eclipse

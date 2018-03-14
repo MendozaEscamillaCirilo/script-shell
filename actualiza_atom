@@ -1,0 +1,26 @@
+#!/bin/bash
+#cd /home/cirilo/Downloads
+#wget https://github.com/atom/atom/releases/download/v1.25.0-beta2/atom-amd64.tar.gz
+#mkdir -p /home/cirilo/.local/opt/
+#cd /home/cirilo/.local/opt/
+#tar xvf /home/cirilo/Downloads/atom-amd64.tar.gz
+
+set -e
+DESTDIR="$HOME/.local/opt/atom"
+
+github_server="https://github.com"
+github_releases="https://github.com/atom/atom/releases"
+last_releases="$(wget -o /dev/null -O - ${github_releses} | \
+  grep -E '.*releases.*download.*beta.*amd64.tar.gz.*' | \
+  sed -e 's/^.*ref="//' -e 's/tar.gz.*/tar.gz/' | \
+  grep -E 'atom-amd64.tar.gz'| \
+  head -1)"
+
+set -u
+
+if [ -z "${last_release}" ]; then
+  exit 1
+fi
+
+mkdir -p "$DESTDIR"
+cd

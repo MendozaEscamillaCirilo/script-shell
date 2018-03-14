@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd $HOME/www/thttpd01
+echo "Puerto 4321"
+darkhttpd $HOME/www/thttpd01 --port 4321

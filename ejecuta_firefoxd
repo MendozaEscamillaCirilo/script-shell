@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd /home/cirilo/.local/opt/firefox-developer/
+
+dolphin /home/cirilo/.local/opt/firefox-developer/
+
+

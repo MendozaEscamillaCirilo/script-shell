@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd $HOME/www/jetty01
+cd jetty-distribution-9.4.8.v20171121
+cd base
+echo "Puerto 7890"
+java -jar ../start.jar jetty.http.port=7890

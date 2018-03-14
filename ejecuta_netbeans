@@ -1,0 +1,8 @@
+#!/bin/bash
+
+
+cd /home/cirilo/.local/opt
+
+cd /home/cirilo/.local/opt/netbeans/bin
+
+./netbeans

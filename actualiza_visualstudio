@@ -1,0 +1,14 @@
+#!/bin/bash
+
+cd /home/cirilo/Downloads
+
+wget https://code.visualstudio.com/docs/?dv=linux64
+
+cd /home/cirilo/.local/opt/
+
+rm -rf VSCode-linux-x64
+
+tar xvf /home/cirilo/Downloads/code-stable-code_*_amd64.tar.gz
+
+
+#https://go.microsoft.com/fwlink/?LinkID=620884
