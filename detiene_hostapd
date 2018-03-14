@@ -1,0 +1,8 @@
+#!/bin/bash
+
+ip link set dev wlan0 up
+
+bash /etc/rc.d/rc.hostapd stop
+
+
+

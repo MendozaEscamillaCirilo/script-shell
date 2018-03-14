@@ -1,0 +1,3 @@
+#!/bin/bash
+
+loadkeys la-latin1.map

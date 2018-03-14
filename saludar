@@ -1,0 +1,8 @@
+#!/bin/bash
+a=$1
+
+if [ -z "${a}" ]: then
+   echo " HOLA MUNDO "
+else
+   echo " HOLA ${a} "
+fi
