@@ -1,0 +1,4 @@
+#!/bin/bash
+cd /$HOME/code/codeblocks-12.11release8629
+
+codeblocks

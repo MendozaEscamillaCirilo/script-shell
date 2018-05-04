@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd /$HOME/Downloads/sublime_text_3
+
+./sublime_text

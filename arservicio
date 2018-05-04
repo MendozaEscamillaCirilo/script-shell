@@ -1,0 +1,11 @@
+#!/bin/bash
+
+a=$1
+
+cd $HOME/Documents/software.ayuda.bt
+
+git add -A
+
+git commit -a -m "${a}"
+
+git push -u origin master

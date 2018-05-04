@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "COMANDOS BASICOS"
+
+echo "acpi / estado battery"
+
+echo "wicd-client / wicd"
+
+echo "hsetroot -fill '$HOME/Downloads/fondo2.jpg' "

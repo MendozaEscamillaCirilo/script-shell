@@ -1,0 +1,9 @@
+#!/bin/bash
+a=$1
+if [ "+" = "${a}" ]; then
+	amixer sset Master 10%+
+else
+
+#if [ "-" = "${a}" ]; then
+	amixer sset Master 10%-
+fi

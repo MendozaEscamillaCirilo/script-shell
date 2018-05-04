@@ -1,0 +1,1 @@
+thttpd -D -p 8080 -T UTF-8 -l -

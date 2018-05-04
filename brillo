@@ -1,0 +1,5 @@
+#!/bin/bash
+
+a=$1
+
+echo ${a} > /sys/class/backlight/radeon_bl0/brightness
