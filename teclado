@@ -1,0 +1,9 @@
+#!/bin/bash
+a=$1
+if [ "espaniol" = "${a}" ]; then
+	setxkbmap -layout latam
+else
+
+#if [ "-" = "${a}" ]; then
+	setxkbmap -layout us
+fi

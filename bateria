@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+# Mostrar el porcentaje de bateria:
+BATERIA=`acpi | awk '{print $4}'`
+# Convertimos el mensaje en texto:
+echo $BATERIA > tmp_bateria.txt
+# Suprimimos caracteres innecesarios:
+RESULTADO=`cut -c 1-2 tmp_bateria.txt`
+# Mostramos la notificación emergente:
+if [ $RESULTADO -ge 92 ]; then
+    notify-send --urgency=critical --expire-time=5000 --app-name=Bateria --icon=battery "Estado de batería" "Batería cargada al 92%, desconecta la alimentación"
+    echo "entre en 1"
+elif [ $RESULTADO -le 20 ]; then
+    notify-send --urgency=critical --expire-time=5000 --app-name=Bateria --icon=battery "Estado de batería" "Nivel de batería muy bajo, conecta la alimentación"
+    echo "entre en 2"
+else
+$BATERIA > /dev/null
+echo "entre en 3"
+
+fi

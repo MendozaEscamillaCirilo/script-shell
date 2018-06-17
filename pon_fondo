@@ -1,4 +1,5 @@
 #!/bin/sh
 
-hsetroot -fill "$HOME/Downloads/fondo2.jpg"
-	-tint "#444444" -Blur 1.5 -sharpen 1.0 -gamma 1.5
+a=$1
+
+hsetroot -fill "$HOME/Downloads/todo/fondo${a}.png"

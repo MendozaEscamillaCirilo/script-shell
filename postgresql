@@ -1,0 +1,57 @@
+#!/bin/bash
+ cd $HOME/.local/var/pgsql/instancia02
+ case "$1" in
+   "start")
+     echo -e "\n  -> pg_ctl -D data --log postgresql.log start ..."
+     pg_ctl -D data --log postgresql.log start
+     echo
+     ;;
+   "stop")
+     echo -e "\n  -> pg_ctl -D data stop ..."
+     pg_ctl -D data stop
+     echo
+     ;;
+   "restart")
+     echo -e "\n  -> pg_ctl -D data stop ..."
+     pg_ctl -D data stop
+     sleep 3
+     echo -e "\n  -> pg_ctl -D data --log postgresql.log start ..."
+     pg_ctl -D data --log postgresql.log start
+     echo
+     ;;
+   "reload")
+     echo -e "\n  -> pg_ctl -D data reload ..."
+     pg_ctl -D data reload
+     echo
+     ;;
+   "status")
+     echo -e "\n  -> pg_ctl -D data status"
+     pg_ctl -D data status
+     if [ $? -eq 0 ]; then
+       echo -e "\n  -> ps aux | grep postgres:"
+       ps aux | grep postgres | grep -v grep | grep -v $(basename $0)
+       echo -e "\n  -> netstat -plutn | grep postgres:"
+       netstat -plutn 2>/dev/null | grep postgres
+     fi
+     echo
+     ;;
+   "config")
+     conf_file=$HOME/.local/var/pgsql/instancia01/data/postgresql.conf
+     if [ ! -f ${conf_file} ]; then
+       echo -e "\n  -> Error, ${conf_file} does not exists."
+       exit 1
+     fi
+     echo -e "\n  -> config: ${conf_file}"
+     conf_options="listen_addresses port max_connections superuser_reserved_connections
+       unix_socket_directories unix_socket_group unix_socket_permissions authentication_timeout
+       ssl password_encryption logging_collector log_directory log_filename client_encoding
+       lc_messages lc_monetary lc_numeric lc_time default_text_search_config"
+     for conf_option in ${conf_options}; do
+       grep -E "${conf_option} *=" ${conf_file} | sed 's/.#.*$//' | sed 's/^/\t/'
+     done
+     echo
+     ;;
+   *)
+     echo "Usage: $(basename $0) [start|stop|restart|reload|status|config]"
+     ;;
+ esac

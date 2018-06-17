@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd $HOME/Downloads
+
+ ./MuseScore-2.2.1-x86_64.AppImage
