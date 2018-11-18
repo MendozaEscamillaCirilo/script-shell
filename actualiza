@@ -1,0 +1,20 @@
+#!/bin/bash
+
+a=$1
+
+cd ..
+rm -rf $HOME/packages
+mkdir -p $HOME/packages
+cd $HOME/packages
+
+wget http://hernandezblasantonio.nsupdate.info/pub/packages/"${a}"/URLS.txt -O URLS.txt
+
+wget -c -i URLS.txt
+
+md5sum -c *.md5
+
+upgradepkg --reinstall --install-new *.t?z
+
+rm -rf $HOME/packages
+
+
