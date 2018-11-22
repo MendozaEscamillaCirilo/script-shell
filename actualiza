@@ -1,9 +1,5 @@
 #!/bin/bash
 
-#El archivo es como super usuario en la carpeta /usr/sbin
-#permisos de administrador chmod +x /usr/sbin/actualiza
-#se ejecuta actualiza fecha ejemp. actualiza 2018-11-10
-
 a=$1
 
 cd ..
